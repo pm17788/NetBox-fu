@@ -1,0 +1,32 @@
+api_key: "FILLMEIN"
+serial_number_regexes:
+  - '[0-9]{2}[A-Z][0-9][A-Z]{2}[0-9]{6}' # ASRock
+  - '[A-Z]{2}[1-9]{3}[A-Z][0-9]{6}' # SuperMicro
+netbox_api_endpoints:
+  #"sites":                  { "url": "/api/dcim/sites/",                      "hashkey":"slug" }
+  #"regions":                { "url": "/api/dcim/regions/",                    "hashkey":"name" }
+  #"devices":                { "url": "/api/dcim/devices/",                    "hashkey":"name" }
+  #"manufacturers":          { "url": "/api/dcim/manufacturers",               "hashkey":"slug" }
+  # By agreement of NetEng/CloudEng/SysEng/SecEng, rack names in NetBox will longer include 
+  # a site name (so, 'DLT-A-1' becomes 'A-1'), keying them on 'name' is no longer sufficiently unique.
+  # Instead, they'll be re-keyed by site, and then by name under that site.
+  #"racks":                  { "url": "/api/dcim/racks/",                      "hashkey":"id" }
+  #"rack-groups":            { "url": "/api/dcim/rack-groups/",                "hashkey":"id" }
+  #"platforms":              { "url": "/api/dcim/platforms/",                  "hashkey":"name" }
+  #"console-ports":          { "url": "/api/dcim/console-ports/",              "hashkey":"name" }
+  #"console-server-ports":   { "url": "/api/dcim/console-server-ports/",       "hashkey":"name" }
+  #"device-roles":           { "url": "/api/dcim/device-roles/",               "hashkey":"slug" }
+  #"device-types":           { "url": "/api/dcim/device-types/",               "hashkey":"slug" }
+  "interface-connections":  { "url": "/api/dcim/interface-connections/",      "hashkey":"id" }
+  #"inventory-items":        { "url": "/api/dcim/inventory-items/",            "hashkey":"id" }
+  #"interfaces":             { "url": "/api/dcim/interfaces/",                 "hashkey":"id" }
+  # Make sure that the ipaddresses are hashed by 'id' here, rather than address.
+  # It is possible to have multiple ip addresses in NetBox (because duplicate IPs and re-used IPs) both exist in our environment)
+  #"ipaddresses":            { "url": "/api/ipam/ip-addresses/",               "hashkey": "id" }
+  #"prefixes":               { "url": "/api/ipam/prefixes/",                   "hashkey": "prefix" }
+  #"clusters":               { "url": "/api/virtualization/clusters/",         "hashkey": "name" }
+  #"virtual-machines":       { "url": "/api/virtualization/virtual-machines/", "hashkey": "name" }
+  #"virtual-interfaces":     { "url": "/api/virtualization/interfaces/",       "hashkey": "id" }
+  #"console-connnections":   { "url": "/api/dcim/console-connections/",        "hashkey": "id" }
+
+
